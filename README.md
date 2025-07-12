@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AGENTA - Agent-Assisted Networked Talking Application
 
-## Getting Started
+An AI-powered video calling platform where users can create custom AI agents for real-time, one-on-one video conversations. Designed to solve the growing demand for intelligent, role-based AI communication in areas like mentoring, tutoring, therapy, and recruitment.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 📌 Project Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+AGENTA enables users to:
+- Create **personalized AI agents** with names, roles, and behavior instructions.
+- Have **live video calls** with these agents.
+- Automatically generate **transcripts, summaries, and follow-up chats** after each call.
+- Continue conversations post-call with persistent memory.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **Example Use Case:**  
+Need quick coding help? Create a custom AI tutor, video call them, and instantly clarify your doubts.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Features
 
-To learn more about Next.js, take a look at the following resources:
+- 🔹 **Real-Time Video Calls** with AI agents using Stream SDK.
+- 🔹 **Custom AI Agent Creation** with user-defined instructions.
+- 🔹 **AI-Generated Responses** via HuggingFace API or OpenAI API.
+- 🔹 **Automatic Call Summaries & Transcripts**.
+- 🔹 **Persistent Post-Call Chat** for continued conversations.
+- 🔹 **Role-Based User Authentication** with Better Auth.
+- 🔹 Scalable, modular system architecture.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🛠️ Tech Stack
 
-## Deploy on Vercel
+**Frontend**
+- Next.js 15  
+- React 19  
+- Tailwind CSS v4  
+- Shadcn/ui  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+**Backend**
+- Node.js  
+- Express.js  
+- Neon PostgreSQL  
+- Drizzle ORM  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**AI & Communication**
+- HuggingFace API / OpenAI API  
+- Stream Video & Chat SDK  
+
+**Supporting Services**
+- Better Auth (Authentication)  
+- Inngest (Background Jobs)  
+- Cloudinary (Media Storage)
+
+---
+
+## 📊 System Architecture
+
+1. **User Authentication** (Better Auth)
+2. **Agent Creation** (with role, name, behavior)
+3. **Video Call Initiation** (Stream SDK)
+4. **AI Response Processing** (HuggingFace / OpenAI API)
+5. **Background Processing** (Inngest for summaries, transcripts)
+6. **Post-Call Chat** (Persistent conversations)
+
+---
+
+## 🔮 Future Scope
+
+- 📱 Mobile application version.
+- 🌐 Voice-only or multi-language support.
+- 🛡️ Role-based security enhancements.
+- 📈 Expert AI agent marketplace.
+- 📃 Automated document generation and expert referrals.
+
+---
+
+## 📃 License
+
+This project is developed as part of a mini project for the Department of CSE, Shri Vishnu Engineering College for Women (Autonomous), Bhimavaram.
+
+---
+
+## 📣 Note
+
+This is a work-in-progress academic prototype built for learning and demonstration purposes.
+
