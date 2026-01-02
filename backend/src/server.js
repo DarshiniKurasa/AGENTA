@@ -30,12 +30,16 @@ app.get("/health", (req, res) => {
 });
 
 // make our app ready for deployment
+// make our app ready for deployment
 if (ENV.NODE_ENV === "production") {
+  console.log("Production mode: Serving static files from frontend/dist");
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-  app.get("/{*any}", (req, res) => {
+  app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
   });
+} else {
+  console.log("Development mode: Not serving static files");
 }
 
 const startServer = async () => {
