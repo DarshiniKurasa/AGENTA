@@ -14,6 +14,7 @@ import OutputPanel from "../components/OutputPanel";
 import useStreamClient from "../hooks/useStreamClient";
 import { StreamCall, StreamVideo } from "@stream-io/video-react-sdk";
 import VideoCallUI from "../components/VideoCallUI";
+import AIInsightsPanel from "../components/AIInsightsPanel";
 
 function SessionPage() {
   const navigate = useNavigate();
@@ -39,12 +40,27 @@ function SessionPage() {
   );
 
   // find the problem data based on session problem title
-  const problemData = session?.problem
+  // find the problem data based on session problem title OR custom problem
+  // find the problem data based on session problem title OR custom problem
+  const problemData = session?.description
+    ? { 
+        title: session.problem, 
+        difficulty: session.difficulty,
+        category: "Custom Problem",
+        description: { text: session.description },
+        // Use the object from DB, or fallback to simple string if migrated
+        starterCode: typeof session.starterCode === 'object' 
+          ? session.starterCode 
+          : { javascript: session.starterCode || "// Write your solution here\n" }
+      }
+    : session?.problem
     ? Object.values(PROBLEMS).find((p) => p.title === session.problem)
     : null;
 
   const [selectedLanguage, setSelectedLanguage] = useState("javascript");
-  const [code, setCode] = useState(problemData?.starterCode?.[selectedLanguage] || "");
+  const [code, setCode] = useState(
+      problemData?.starterCode?.[selectedLanguage] || "// Write your solution here"
+  );
 
   // auto-join session if user is not already a participant and not the host
   useEffect(() => {
@@ -223,6 +239,9 @@ function SessionPage() {
                         </ul>
                       </div>
                     )}
+                    
+                    {/* AI Insights for Host */}
+                    <AIInsightsPanel session={session} isHost={isHost} />
                   </div>
                 </div>
               </Panel>

@@ -14,7 +14,16 @@ function DashboardPage() {
   const navigate = useNavigate();
   const { user } = useUser();
   const [showCreateModal, setShowCreateModal] = useState(false);
-  const [roomConfig, setRoomConfig] = useState({ problem: "", difficulty: "" });
+  const [roomConfig, setRoomConfig] = useState({ 
+    problem: "", 
+    difficulty: "",
+    description: "",
+    starterCode: {
+      javascript: "",
+      python: "",
+      java: "",
+    }
+  });
 
   const createSessionMutation = useCreateSession();
 
@@ -28,6 +37,8 @@ function DashboardPage() {
       {
         problem: roomConfig.problem,
         difficulty: roomConfig.difficulty.toLowerCase(),
+        description: roomConfig.description,
+        starterCode: roomConfig.starterCode,
       },
       {
         onSuccess: (data) => {

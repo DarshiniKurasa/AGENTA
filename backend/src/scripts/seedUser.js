@@ -9,7 +9,7 @@ const seedUser = async () => {
         await mongoose.connect(process.env.DB_URL);
         console.log("Connected to DB");
 
-        const clerkId = "user_37goZjpUZixC8uDhxCquUEG6rq"; // ID from logs
+        const clerkId = "user_37h0nBxo4yfqhNBBzTiDPV0FoAH"; // ID from PROD logs
         const email = "demo@example.com"; // Placeholder
         const name = "Demo User";
 

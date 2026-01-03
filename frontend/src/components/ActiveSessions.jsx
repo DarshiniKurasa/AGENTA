@@ -51,22 +51,12 @@ function ActiveSessions({ sessions, isLoading, isUserInSession }) {
                     </div>
 
                     <div className="flex-1 min-w-0">
-                      <div className="flex items-center gap-2 mb-2">
-                        <h3 className="font-bold text-lg truncate">{session.problem}</h3>
-                        <span
-                          className={`badge badge-sm ${getDifficultyBadgeClass(
-                            session.difficulty
-                          )}`}
-                        >
-                          {session.difficulty.slice(0, 1).toUpperCase() +
-                            session.difficulty.slice(1)}
-                        </span>
-                      </div>
-
+                        <h3 className="font-bold text-lg mb-2">Interview Session ({session.difficulty})</h3>
+                      
                       <div className="flex items-center gap-4 text-sm opacity-80">
-                        <div className="flex items-center gap-1.5">
-                          <CrownIcon className="size-4" />
-                          <span className="font-medium">{session.host?.name}</span>
+                        <div className="flex items-center gap-2 text-sm text-base-content/60">
+                          <span className="font-medium">Host:</span>
+                          <span className="truncate max-w-[150px] font-medium">{session.host?.name}</span>
                         </div>
                         <div className="flex items-center gap-1.5">
                           <UsersIcon className="size-4" />

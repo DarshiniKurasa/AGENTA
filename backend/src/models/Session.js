@@ -11,6 +11,15 @@ const sessionSchema = new mongoose.Schema(
       enum: ["easy", "medium", "hard"],
       required: true,
     },
+    // For custom problems
+    description: {
+      type: String,
+      default: "",
+    },
+    starterCode: {
+      type: Object,
+      default: {},
+    },
     host: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
@@ -25,6 +34,10 @@ const sessionSchema = new mongoose.Schema(
       type: String,
       enum: ["active", "completed"],
       default: "active",
+    },
+    aiInsights: {
+      type: String,
+      default: "",
     },
     // stream video call ID
     callId: {
